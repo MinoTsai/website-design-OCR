@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </meta>
+    
+    <script src="assets/js/head.js"></script>
+</head>
+
+<body>
+    <div id="container">
+
+        <!-- 內容 start -->
+        <section class="main">
+            <div class="content">
+                <div class="row gx-0 ">
+                    <div class="left-img-area col-lg col-12 p-3 d-flex flex-column">
+                        <!-- function area strat -->
+                        <div class="fonctional-icons-area flex">
+                            <button class="fonctional-icons-btn" title="視訊鏡頭" id="videocam-btn">
+                                <span class="material-icons">videocam</span>
+                            </button>
+                            <button class="fonctional-icons-btn" title="麥克風" id="mic-btn">
+                                <span class="material-icons">mic</span>
+                            </button>
+                            <button class="fonctional-icons-btn" title="螢幕分享">
+                                <span class="material-icons">screen_share</span>
+                            </button>
+                            <button class="fonctional-icons-btn" title="電子白板">
+                                <span class="material-icons">draw</span>
+                            </button>
+                            <button class="fonctional-icons-btn" title="即時字幕" id="subtitles-btn">
+                                <span class="material-icons">subtitles</span>
+                            </button>
+                            <button class="fonctional-icons-btn" title="翻譯字幕" id="translate-btn">
+                                <span class="material-icons">translate</span>
+                            </button>
+                            <button class="fonctional-icons-btn" title="離開會議室">
+                                <span class="material-icons">logout</span>
+                            </button>
+                        </div>
+                        <!-- function area end -->
+                        <!-- main area start -->
+                        <div class="flex-grow-1 d-flex justify-content-center align-items-center pb-3">
+                            <div class="main-area w-100 justify-content-center">
+
+                                <div class="row">
+                                    <!-- 與會者 01 start -->
+                                    <div class="col mb-3 d-flex align-self-center justify-content-center">
+                                        <div class="ratio ratio-16x9 mb-3 attendee-box" style="max-width: 1000px;">
+                                            <img src="assets/img/user-01.jpg" class="attendee-img">
+                                            <div>
+                                                <div class="attendee-mic mic-off" id="selfMicMain">
+                                                    <span class="material-icons">mic</span>
+                                                </div>
+                                                <!-- main-area 與會者姓名 start -->
+                                                <div class="attendee-name">
+                                                    Amber Hong
+                                                </div>
+                                                <!-- main-area 與會者姓名 end -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 與會者 01 end -->
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- 字幕區 start -->
+                        <div class="d-flex flex-column align-items-center justify-content-center p-3 mb-3 caption-area">
+                            <!-- 即時字幕 start -->
+                            <div class="caption-box d-none" id="subtitles-box">Emily Wang：今天的會議即將開始進行</div>
+                            <!-- 即時字幕 end -->
+                            <!-- 即時翻譯字幕 start -->
+                            <div class="caption-box d-none" id="translate-box">
+                                <span class="material-icons me-2 px-1 translation-icon">translate</span>
+                                Emily Wang：Let's start the conference
+                            </div>
+                            <!-- 即時翻譯字幕 end -->
+                        </div>
+                        <!-- 字幕區 end -->
+
+                        <!-- main area end -->
+                        <!-- right-function-area-open/close-btn start -->
+                        <button class="d-none d-lg-block" id="sidebar-toggle">||</button>
+                        <!-- right-function-area-open/close-btn end -->
+                    </div>
+                    <div class="right-function-area col-lg col-12 ms-auto d-none d-lg-block" id="right-function-area">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button class="nav-link col py-3 active" id="attendees-tab" data-bs-toggle="tab"
+                                    data-bs-target="#attendees" type="button" role="tab" aria-controls="attendees"
+                                    aria-selected="true">與會人</button>
+                                <button class="nav-link col py-3" id="chatroom-tab" data-bs-toggle="tab"
+                                    data-bs-target="#chatroom" type="button" role="tab" aria-controls="chatroom"
+                                    aria-selected="false">討論區</button>
+                                <button class="nav-link col py-3" id="test-tab" data-bs-toggle="tab"
+                                    data-bs-target="#test" type="button" role="tab" aria-controls="test"
+                                    aria-selected="false">其他</button>
+                            </div>
+                        </nav>
+                        <!-- tab-content start -->
+
+                        <div class="tab-content p-4 flex-grow-1 overflow-auto" id="nav-tabContent"
+                            style=" height:calc(100vh - 60px);">
+                            <!-- 與會人 sratr -->
+                            <div class="tab-pane fade show active" id="attendees" role="tabpanel"
+                                aria-labelledby="attendees-tab">
+                                <div class="overflow-auto" style=" height:-webkit-fill-available;">
+                                    <!-- 與會人01 sratr -->
+                                    <div class="ratio ratio-16x9 mb-3 attendee-box">
+                                        <img src="assets/img/user-01.jpg" class="attendee-img">
+                                        <div>
+                                            <div class="attendee-mic mic-off" id="selfMicAttendee">
+                                                <span class="material-icons">mic</span>
+                                            </div>
+                                            <div class="attendee-name">Amber Hong</div>
+                                        </div>
+                                    </div>
+                                    <!-- 與會人01 end -->
+                                    <!-- 與會人02 sratr -->
+                                    <div class="ratio ratio-16x9 mb-3 attendee-box">
+                                        <img src="assets/img/user-02.jpg" class="attendee-img">
+                                        <div>
+                                            <div class="attendee-mic mic-off">
+                                                <span class="material-icons">mic</span>
+                                            </div>
+                                            <div class="attendee-name">Eric Wang</div>
+                                        </div>
+                                    </div>
+                                    <!-- 與會人02 end -->
+                                    <!-- 與會人03 sratr -->
+                                    <div class="ratio ratio-16x9 mb-3 attendee-box">
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <img src="assets/img/user-03.jpg" class="attendee-no-img">
+                                        </div>
+                                        <div>
+                                            <div class="attendee-mic mic-on">
+                                                <span class="material-icons">mic</span>
+                                            </div>
+                                            <div class="attendee-name">Howard Chang</div>
+                                        </div>
+                                    </div>
+                                    <!-- 與會人03 end -->
+                                    <!-- 與會人02 sratr -->
+                                    <div class="ratio ratio-16x9 mb-3 attendee-box">
+                                        <img src="assets/img/user-04.jpg" class="attendee-img">
+                                        <div>
+                                            <div class="attendee-mic mic-off">
+                                                <span class="material-icons">mic</span>
+                                            </div>
+                                            <div class="attendee-name">Andrew Lu</div>
+                                        </div>
+                                    </div>
+                                    <!-- 與會人02 end -->
+                                    <!-- 與會人04 sratr -->
+                                    <div class="ratio ratio-16x9 mb-3 attendee-box">
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <img src="assets/img/user-05.jpg" class="attendee-no-img">
+                                        </div>
+                                        <div>
+                                            <div class="attendee-mic mic-off">
+                                                <span class="material-icons">mic</span>
+                                            </div>
+                                            <div class="attendee-name">Emily Wang</div>
+                                        </div>
+                                    </div>
+                                    <!-- 與會人04 end -->
+                                </div>
+                            </div>
+                            <!-- 與會人 end -->
+                            <!-- 討論區 start -->
+                            <div class="tab-pane fade" id="chatroom" role="tabpanel" aria-labelledby="chatroom-tab"
+                                style=" height:-webkit-fill-available;">
+                                <div class="d-flex flex-column" style=" height:-webkit-fill-available;">
+                                    <div class="flex-grow-1 overflow-scroll">
+                                        <div class="chat-box">
+                                            <div class="user-name">Amber Hong</div>
+                                            <div class="chat-text">各位覺得要執行 Plan A 還是 Plan B 呢？</div>
+                                        </div>
+                                        <div class="chat-box">
+                                            <div class="user-name">Andrew Lu</div>
+                                            <div class="chat-text">Plan A</div>
+                                        </div>
+                                        <div class="chat-box self">
+                                            <div class="user-name">Eric Wang</div>
+                                            <div class="chat-text">A</div>
+                                        </div>
+                                        <div class="chat-box">
+                                            <div class="user-name">Joanna Shu</div>
+                                            <div class="chat-text">Plan B</div>
+                                        </div>
+                                        <div class="chat-box">
+                                            <div class="user-name">Rock Lin</div>
+                                            <div class="chat-text">B</div>
+                                        </div>
+                                        <div class="chat-box">
+                                            <div class="user-name">Howard Chang</div>
+                                            <div class="chat-text">A</div>
+                                        </div>
+                                        <div class="chat-box">
+                                            <div class="user-name">Emily Wang</div>
+                                            <div class="chat-text">會議記錄<br>
+                                                Plan A：3票<br>
+                                                Plan B：2票<br>
+                                                結果：執行Plan A
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center w-100 mt-3">
+                                        <div class="w-100"><input type="text" class="form-control w-100"></div>
+                                        <div role="button"><span class="material-icons send-icon">
+                                                send
+                                            </span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 討論區 end -->
+
+                            <!-- 其他 sratr -->
+                            <div class="tab-pane fade" id="test" role="tabpanel" aria-labelledby="test-tab">
+                                <div class=" m-3" style=" height:-webkit-fill-available;">
+                                    <div class="other-item" role="button">
+                                        <div>
+                                            <span class="material-icons me-3">settings</span>
+                                        </div>
+                                        <div>設備設定</div>
+                                    </div>
+                                    <div class="other-item" role="button">
+                                        <div>
+                                            <span class="material-icons me-3">share</span>
+                                        </div>
+                                        <div>分享會議連結</div>
+                                    </div>
+                                    <div class="other-item" role="button">
+                                        <div>
+                                            <span class="material-icons me-3">file_download</span>
+                                        </div>
+                                        <div>逐字稿下載</div>
+                                    </div>
+                                    <div class="other-item" role="button">
+                                        <div>
+                                            <span class="material-icons me-3">info</span>
+                                        </div>
+                                        <div>帳號資訊</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 其他 end -->
+                            <!-- tab-content end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

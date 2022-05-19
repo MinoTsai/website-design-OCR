@@ -1,0 +1,514 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    /* overflow-x: hidden; */
+    position: relative ;
+    left: 0px;
+    top: 0px;
+    font-family: sans-serif, serif, "Noto Sans CJK TC", "Microsoft JhengHei", PingFang, STHeiti;
+    letter-spacing: .05rem;
+    background-color: #888888;
+    line-height: 1.5;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+}
+
+/* header {
+    flex: 0 0 auto;
+    box-shadow: #aaaaaa 1px 0px 3px;
+} */
+
+.main {
+    flex: 0 1 auto;
+    margin-bottom: 0%;
+}
+
+/* footer {
+    flex: 0 0 auto;
+    width: 100%;
+    color: rgb(183, 183, 183);
+    padding: 1rem;
+    text-align: center;
+    font-size: small;
+} */
+
+footer p {
+    margin-bottom: 0%;
+}
+/* hide scrollbar but allow scrolling start */
+div {
+    -ms-overflow-style: none;
+    /* for Internet Explorer, Edge */
+    scrollbar-width: none;
+    /* for Firefox */
+    overflow-y: scroll;
+}
+
+div::-webkit-scrollbar {
+    display: none;
+    /* for Chrome, Safari, and Opera */
+}
+/* hide scrollbar but allow scrolling start */
+/* 初始設定 end */
+
+/* basic-style start */
+.material-icons, .material-icons-outlined, .material-icons-round, .material-icons-sharp, .material-icons-two-tone {
+    display: inline-block;
+    font-size: inherit;
+    line-height: inherit;
+    vertical-align: middle;
+    /* transform: translateY(-.1em); */
+}
+
+.content {
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-12 {
+    font-size: 0.75rem;
+}
+
+.fs-20 {
+    font-size: 1.25rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+h6 {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.5;
+}
+.fc-fff{
+    color: #fff;
+}
+.fc-pink{
+    color: #ED93AF;
+}
+.fc-green{
+    color: #00cbbf;
+}
+/* basic-style start */
+
+/* button start */
+.btn-normal {
+    padding: .75rem;
+    border-radius: .25rem;
+}
+
+.btn-sm {
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    font-size: small;
+}
+
+.btn-lg {
+    padding: .75rem 1.5rem;
+    border-radius: .5rem;
+    font-size: 1.25rem;
+}
+
+.btn-w100 {
+    width: 100%;
+    padding: .5rem 1.5rem;
+    border-radius: .25rem;
+}
+
+.btn-cancel {
+    background-color: #ffffff;
+    color: #424242;
+    border: 1px solid lightgray;
+}
+
+.btn-cancel:hover {
+    background-color: lightgray;
+    color: #fff;
+    border: 1px solid lightgray;
+}
+
+.btn-green {
+    background-color: #35C2BA;
+    color: #fff;
+    border: 1px solid #35C2BA;
+}
+
+.btn-green:hover,
+.btn-green-outlined:hover {
+    background-color: #44dbd4;
+    color: #fff;
+    border: 1px solid #44dbd4;
+}
+
+.btn-green:active,
+.btn-green-outlined:active {
+    background-color: #0eaca4;
+    color: #fff;
+    border: 1px solid #0eaca4;
+}
+
+.btn-green-outlined {
+    background-color: #fff;
+    color: #35C2BA;
+    border: 1px solid lightgray
+}
+
+.btn-red {
+    background-color: #ac0101;
+    color: #fff;
+    border: 1px solid #ac0101;
+}
+
+.btn-red:hover,
+.btn-red-outlined:hover {
+    background-color: #cc0101;
+    color: #fff;
+    border: 1px solid #cc0101;
+}
+
+.btn-red:active,
+.btn-red-outlined:active {
+    background-color: #800808;
+    color: #fff;
+    border: 1px solid #800808;
+}
+
+.btn-red-outlined {
+    background-color: #fff;
+    color: #ac0101;
+    border: 1px solid lightgray
+}
+/* button end */
+
+/* component-delete-btn start */
+.btn-delete {
+    color: #C4C4C4;
+    position: absolute;
+    z-index: 3;
+}
+
+.btn-delete:hover {
+    color: #ED93AF;
+}
+
+.dis-connect {
+    font-size: 14px;
+    color: red;
+    font-weight: bold;
+}
+/* component-delete-btn end */
+
+/* sidebar-toggle-btn start */
+#sidebar-toggle{
+    background-color: #4D4D4D; 
+    border-radius: .25rem 0 0 .25rem; 
+    padding: .5rem .25rem; 
+    color:darkgray; 
+    position:absolute; 
+    right:0; 
+    top: 55px; 
+    border: none; 
+    font-size:1.5rem;
+    color: #00cbbf;
+}
+/* sidebar-toggle-btn end */
+
+/* modal start */
+.modal-header {
+    padding: 1rem;
+}
+
+.modal-header-green {
+    color: #fff;
+    background-color: #0eaca4;
+}
+
+.modal-header-red {
+    color: #fff;
+    background-color: #A00000;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+/* modal end */
+
+/* 左側-功能選單 start */
+.fonctional-icons-area {
+    padding-bottom: .5rem;
+}
+
+.fonctional-icons-area button {
+    margin: 0 .75rem;
+    font-size: 1.75rem;
+    color: rgba(0, 0, 0, .5);
+    background-color: #88888800;
+    border: none;
+}
+.fonctional-icons-btn:hover {
+    color: #00cbbf;
+}
+
+.fonctional-icons-btn.active {
+    color: #00cbbf;
+}
+/* 左側-功能選單 end */
+
+/* 左側-畫面區塊 start */
+.left-img-area {
+    height: 100vh;
+    position: relative; 
+    z-index:1;
+    /* background-color: antiquewhite; */
+}
+/* 左側-畫面區塊 end */
+
+/* 右側-功能區塊 start */
+.right-function-area {
+    background-color: #4D4D4D;
+    height: 100vh;
+    max-width: 20rem;
+}
+
+.nav-tabs {
+    border-bottom: none;
+}
+
+.nav-tabs .nav-link {
+    border-radius: 0;
+    border: none;
+    color: #BBBBBB;
+    background-color: #313131;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #35C2BA;
+    background-color: #3E3E3E;
+}
+
+.nav-tabs .nav-link.active {
+    color: #00cbbf;
+    background-color: #4D4D4D;
+}
+/* 右側-功能區塊 end */
+
+/* 左/右側-與會者視窗 start */
+.attendee-box {
+    background-color: #313131;
+    border-radius: .25rem;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.attendee-img {
+    object-fit: cover;
+    border-radius: .25rem;
+    position: absolute;
+    z-index: 1;
+}
+
+.attendee-no-img {
+    object-fit: cover;
+    background-color: #c0c0c0;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    margin-bottom: 1rem;
+}
+
+.attendee-name {
+    position: absolute;
+    z-index: 2;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    background-color: rgba(82, 82, 82, .8);
+    padding: .25rem .75rem;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    bottom: .5rem;
+    right: 0;
+}
+.attendee-mic{
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    font-size: 1.25rem;
+    padding: 0 .3rem;
+    border-radius: 50px;
+    left: .5rem;
+    top: .5rem;
+    
+}
+.mic-on{
+    color: #fff;
+    background-color: #00cbbf;
+    text-shadow: .75px .75px .5px rgb(139, 139, 139);
+    box-shadow: .75px .75px .5px rgb(139, 139, 139);
+}
+.mic-off{
+    color: rgb(186, 186, 186);
+    background-color: #474747cd;
+}
+/* 左/右側-與會者視窗-LiveEZ end */
+
+/* 右側-討論區-chat area start */
+.chat-box {
+    border-top: 1px dashed #BBBBBB;
+    padding: 1rem 0;
+}
+
+.chat-box:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.user-name {
+    color: #00cbbf;
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+
+.chat-text {
+    color: #fff;
+    line-height: 1.5;
+}
+
+.self .user-name {
+    text-align: end;
+    color: #FFAED8;
+}
+
+.self .chat-text {
+    text-align: right;
+
+}
+
+.send-icon {
+    color: #35C2BA;
+    font-size: 1.5rem;
+    margin-left: .75rem;
+}
+
+.send-icon:hover {
+    color: #47ede4;
+}
+/* 右側-討論區-chat area end */
+
+/* 右側-其他-other start */
+.other-item {
+    display: flex;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.other-item:hover {
+    color: #35C2BA;
+}
+
+.other-item .material-icons {
+    font-size: 1.25rem;
+}
+/* 右側-其他-other end */  
+
+/* 右側-教材下載-download start */
+.download-box {
+    color: #fff;
+    border: #0eaca4 1px solid;
+    padding: 1rem;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+}
+
+.download-box:hover {
+    color: #fff;
+    border: #0eaca4 1px solid;
+    background-color: #0eaca4;
+}
+/* 右側-教材下載-download end */
+
+/* 左側-字幕 caption start */
+.caption-area {
+    position: absolute;
+    z-index: 3;
+    left: 1rem;
+    right: 1rem;
+    bottom: .5rem;
+}
+
+.caption-box {
+    text-align: center;
+    display: block;
+    padding: .5rem 1rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: .25rem;
+    margin-bottom: .5rem;
+}
+
+.translation-icon {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #00cbbf;
+    color: rgba(0, 0, 0, .5);
+    border-radius: .25rem;
+}
+.share_screen-icon {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #00cbbf;
+    color: rgba(0, 0, 0, .65);
+    border-radius: .25rem;
+    text-shadow: none;
+}
+/* 左側-字幕 caption end */
+
