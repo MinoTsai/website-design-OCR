@@ -1,21 +1,31 @@
+//functional button on/off
 $(".fonctional-icons-btn").click(function () {
     $(this).toggleClass("active");
 });
 
+// subtitles show/hide
 $("#subtitles-btn").click(function () {
     $("#subtitles-box").toggleClass("d-none");
 });
 
+// translate show/hide
 $("#translate-btn").click(function () {
     $("#translate-box").toggleClass("d-none");
 });
 
+//right functionl area close/open
 $("#sidebar-toggle").on("click", function () {
     $("#right-function-area").toggleClass("d-none, d-lg-block");
 });
 
+// mic-btn on/off
 $("#mic-btn").on("click", function() {
-    $("#selfMicMain, #selfMicAttendee").toggleClass("mic-on mic-off");
+    $("#selfMicMainOn, #selfMicMainOff, #selfMicAttendeeOn, #selfMicAttendeeOff").toggleClass("mic-on mic-off");
+})
+
+// videocan-btn on/off
+$("#videocam-btn").on("click", function() {
+    $("#selfVidoecamMainOn, #selfVidoecamMainOff, #selfVideocamAttendeeOn, #selfVideocamAttendeeOff").toggleClass("d-none");
 })
 
 //videocam icon change
