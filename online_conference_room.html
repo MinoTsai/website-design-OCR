@@ -20,11 +20,11 @@
                     <div class="left-img-area col-lg col-12 p-3 d-flex flex-column">
                         <!-- function area strat -->
                         <div class="fonctional-icons-area flex">
-                            <button class="fonctional-icons-btn" title="視訊鏡頭" id="videocam-btn">
-                                <span class="material-icons">videocam</span>
+                            <button class="fonctional-icons-btn" title="視訊鏡頭" onclick="videocamBtn()">
+                                <span class="material-icons" id="videocamIcon">videocam_off</span>
                             </button>
-                            <button class="fonctional-icons-btn" title="麥克風" id="mic-btn">
-                                <span class="material-icons">mic</span>
+                            <button class="fonctional-icons-btn" title="麥克風" id="mic-btn" onclick="micBtn()">
+                                <span class="material-icons micIcon" id="micIcon">mic_off</span>
                             </button>
                             <button class="fonctional-icons-btn" title="螢幕分享">
                                 <span class="material-icons">screen_share</span>
@@ -47,20 +47,27 @@
                         <div class="flex-grow-1 d-flex justify-content-center align-items-center pb-3">
                             <div class="main-area w-100 justify-content-center">
 
-                                <div class="row">
+                                <div class="row live-ez">
                                     <!-- 與會者 01 start -->
                                     <div class="col mb-3 d-flex align-self-center justify-content-center">
                                         <div class="ratio ratio-16x9 mb-3 attendee-box" style="max-width: 1000px;">
                                             <img src="assets/img/user-01.jpg" class="attendee-img">
                                             <div>
                                                 <div class="attendee-mic mic-off" id="selfMicMain">
-                                                    <span class="material-icons">mic</span>
+                                                    <span class="material-icons micIcon">mic_off</span>
                                                 </div>
+                                                <!-- main-area 與會者姓名/螢幕分享中，依據視窗狀態，擇一顯示 -->
                                                 <!-- main-area 與會者姓名 start -->
                                                 <div class="attendee-name">
                                                     Amber Hong
                                                 </div>
                                                 <!-- main-area 與會者姓名 end -->
+                                                <!-- main-area 與會者姓名（螢幕分享中） start -->
+                                                <!-- <div class="attendee-name">
+                                                    <span class="material-icons me-2 px-1 share_screen-icon">screen_share</span>
+                                                    Amber Hong
+                                                </div> -->
+                                                <!-- main-area 與會者姓名（螢幕分享中） end -->
                                             </div>
                                         </div>
                                     </div>
@@ -93,31 +100,23 @@
                     <div class="right-function-area col-lg col-12 ms-auto d-none d-lg-block" id="right-function-area">
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <button class="nav-link col py-3 active" id="attendees-tab" data-bs-toggle="tab"
-                                    data-bs-target="#attendees" type="button" role="tab" aria-controls="attendees"
-                                    aria-selected="true">與會人</button>
-                                <button class="nav-link col py-3" id="chatroom-tab" data-bs-toggle="tab"
-                                    data-bs-target="#chatroom" type="button" role="tab" aria-controls="chatroom"
-                                    aria-selected="false">討論區</button>
-                                <button class="nav-link col py-3" id="test-tab" data-bs-toggle="tab"
-                                    data-bs-target="#test" type="button" role="tab" aria-controls="test"
-                                    aria-selected="false">其他</button>
+                                <button class="nav-link col py-3 active" id="attendees-tab" data-bs-toggle="tab" data-bs-target="#attendees" type="button" role="tab" aria-controls="attendees" aria-selected="true">與會人</button>
+                                <button class="nav-link col py-3" id="chatroom-tab" data-bs-toggle="tab" data-bs-target="#chatroom" type="button" role="tab" aria-controls="chatroom" aria-selected="false">討論區</button>
+                                <button class="nav-link col py-3" id="test-tab" data-bs-toggle="tab" data-bs-target="#test" type="button" role="tab" aria-controls="test" aria-selected="false">其他</button>
                             </div>
                         </nav>
                         <!-- tab-content start -->
 
-                        <div class="tab-content p-4 flex-grow-1 overflow-auto" id="nav-tabContent"
-                            style=" height:calc(100vh - 60px);">
+                        <div class="tab-content p-4 flex-grow-1 live-ez overflow-auto" id="nav-tabContent" style=" height:calc(100vh - 60px);">
                             <!-- 與會人 sratr -->
-                            <div class="tab-pane fade show active" id="attendees" role="tabpanel"
-                                aria-labelledby="attendees-tab">
+                            <div class="tab-pane fade show active" id="attendees" role="tabpanel" aria-labelledby="attendees-tab">
                                 <div class="overflow-auto" style=" height:-webkit-fill-available;">
                                     <!-- 與會人01 sratr -->
                                     <div class="ratio ratio-16x9 mb-3 attendee-box">
                                         <img src="assets/img/user-01.jpg" class="attendee-img">
                                         <div>
                                             <div class="attendee-mic mic-off" id="selfMicAttendee">
-                                                <span class="material-icons">mic</span>
+                                                <span class="material-icons micIcon">mic_off</span>
                                             </div>
                                             <div class="attendee-name">Amber Hong</div>
                                         </div>
@@ -125,10 +124,10 @@
                                     <!-- 與會人01 end -->
                                     <!-- 與會人02 sratr -->
                                     <div class="ratio ratio-16x9 mb-3 attendee-box">
-                                        <img src="assets/img/user-02.jpg" class="attendee-img">
+                                        <img src="assets/img/user-03.jpg" class="attendee-img">
                                         <div>
                                             <div class="attendee-mic mic-off">
-                                                <span class="material-icons">mic</span>
+                                                <span class="material-icons">mic_off</span>
                                             </div>
                                             <div class="attendee-name">Eric Wang</div>
                                         </div>
@@ -137,7 +136,7 @@
                                     <!-- 與會人03 sratr -->
                                     <div class="ratio ratio-16x9 mb-3 attendee-box">
                                         <div class="d-flex justify-content-center align-items-center">
-                                            <img src="assets/img/user-03.jpg" class="attendee-no-img">
+                                            <img src="assets/img/user-04.jpg" class="attendee-no-img">
                                         </div>
                                         <div>
                                             <div class="attendee-mic mic-on">
@@ -149,38 +148,37 @@
                                     <!-- 與會人03 end -->
                                     <!-- 與會人02 sratr -->
                                     <div class="ratio ratio-16x9 mb-3 attendee-box">
-                                        <img src="assets/img/user-04.jpg" class="attendee-img">
+                                        <img src="assets/img/user-03.jpg" class="attendee-img">
                                         <div>
                                             <div class="attendee-mic mic-off">
-                                                <span class="material-icons">mic</span>
+                                                <span class="material-icons">mic_off</span>
                                             </div>
-                                            <div class="attendee-name">Andrew Lu</div>
+                                            <div class="attendee-name">Eric Wang</div>
                                         </div>
                                     </div>
                                     <!-- 與會人02 end -->
-                                    <!-- 與會人04 sratr -->
+                                    <!-- 與會人03 sratr -->
                                     <div class="ratio ratio-16x9 mb-3 attendee-box">
                                         <div class="d-flex justify-content-center align-items-center">
-                                            <img src="assets/img/user-05.jpg" class="attendee-no-img">
+                                            <img src="assets/img/user-04.jpg" class="attendee-no-img">
                                         </div>
                                         <div>
                                             <div class="attendee-mic mic-off">
-                                                <span class="material-icons">mic</span>
+                                                <span class="material-icons">mic_off</span>
                                             </div>
-                                            <div class="attendee-name">Emily Wang</div>
+                                            <div class="attendee-name">Howard Chang</div>
                                         </div>
                                     </div>
-                                    <!-- 與會人04 end -->
+                                    <!-- 與會人03 end -->
                                 </div>
                             </div>
                             <!-- 與會人 end -->
                             <!-- 討論區 start -->
-                            <div class="tab-pane fade" id="chatroom" role="tabpanel" aria-labelledby="chatroom-tab"
-                                style=" height:-webkit-fill-available;">
+                            <div class="tab-pane fade" id="chatroom" role="tabpanel" aria-labelledby="chatroom-tab" style=" height:-webkit-fill-available;">
                                 <div class="d-flex flex-column" style=" height:-webkit-fill-available;">
                                     <div class="flex-grow-1 overflow-scroll">
                                         <div class="chat-box">
-                                            <div class="user-name">Amber Hong</div>
+                                            <div class="user-name">Emily Wang</div>
                                             <div class="chat-text">各位覺得要執行 Plan A 還是 Plan B 呢？</div>
                                         </div>
                                         <div class="chat-box">
@@ -188,7 +186,7 @@
                                             <div class="chat-text">Plan A</div>
                                         </div>
                                         <div class="chat-box self">
-                                            <div class="user-name">Eric Wang</div>
+                                            <div class="user-name">Amber Chen</div>
                                             <div class="chat-text">A</div>
                                         </div>
                                         <div class="chat-box">
@@ -200,14 +198,14 @@
                                             <div class="chat-text">B</div>
                                         </div>
                                         <div class="chat-box">
-                                            <div class="user-name">Howard Chang</div>
+                                            <div class="user-name">Marian Tan</div>
                                             <div class="chat-text">A</div>
                                         </div>
                                         <div class="chat-box">
-                                            <div class="user-name">Emily Wang</div>
+                                            <div class="user-name">Emily Wan</div>
                                             <div class="chat-text">會議記錄<br>
                                                 Plan A：3票<br>
-                                                Plan B：2票<br>
+                                                Plan B：0票<br>
                                                 結果：執行Plan A
                                             </div>
                                         </div>
@@ -225,13 +223,13 @@
                             <!-- 其他 sratr -->
                             <div class="tab-pane fade" id="test" role="tabpanel" aria-labelledby="test-tab">
                                 <div class=" m-3" style=" height:-webkit-fill-available;">
-                                    <div class="other-item" role="button">
+                                    <div class="other-item" role="button" data-bs-toggle="modal" data-bs-target="#deviceSetting">
                                         <div>
                                             <span class="material-icons me-3">settings</span>
                                         </div>
                                         <div>設備設定</div>
                                     </div>
-                                    <div class="other-item" role="button">
+                                    <div class="other-item" role="button" data-bs-toggle="modal" data-bs-target="#shareLink">
                                         <div>
                                             <span class="material-icons me-3">share</span>
                                         </div>
@@ -243,7 +241,7 @@
                                         </div>
                                         <div>逐字稿下載</div>
                                     </div>
-                                    <div class="other-item" role="button">
+                                    <div class="other-item" role="button" data-bs-toggle="modal" data-bs-target="#accountInfo">
                                         <div>
                                             <span class="material-icons me-3">info</span>
                                         </div>
@@ -258,7 +256,81 @@
                 </div>
             </div>
         </section>
+
+
     </div>
+
+    <!-- 設備設定-modal start -->
+    <div class="modal fade" id="deviceSetting">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal-title">設備設定</div>
+                    <div class="mb-3">
+                        <label class="form-label fs-14">攝影機選擇：</label>
+                        <select class="form-select">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fs-14">麥克風選擇：</label>
+                        <select class="form-select">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <a class="btn btn-sm btn-green" data-bs-dismiss="modal">確認返回</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 設備設定-modal end -->
+    <!-- 分享會議連結-modal start -->
+    <div class="modal fade" id="shareLink">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal-title">分享會議連結</div>
+                    <p class="mb-3">您可以將這個會議連結分享給您想邀請加入此會議的人</p>
+                    <p class="fs-14 mb-2">會議連結</p>
+                    <div class="link-area">
+                        <p id="copy">http://i.am.the.link.of/conferenceroom</p>
+                        <button class="copy-btn" onclick="copyEvent('copy')"><span class="material-icons-outlined">content_copy</span></button>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-sm btn-green" data-bs-dismiss="modal">確認返回</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 分享會議連結-modal end -->
+    <!-- 設備設定-modal start -->
+    <div class="modal fade" id="accountInfo">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal-title">帳號資訊</div>
+                    <p class="fs-14" style="line-height: 2;">使用者名稱：Amber Hong<br>
+                    帳號狀態：Pro<br>
+                    期限：2022/01/01</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-sm btn-green" data-bs-dismiss="modal">確認返回</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 設備設定-modal end -->
 
     <script src="assets/js/script.js"></script>
 

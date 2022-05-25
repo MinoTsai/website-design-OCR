@@ -18,6 +18,34 @@ $("#mic-btn").on("click", function() {
     $("#selfMicMain, #selfMicAttendee").toggleClass("mic-on mic-off");
 })
 
+//videocam icon change
+function videocamBtn() {
+    var x = document.getElementById("videocamIcon");
+    if (x.innerHTML === "videocam_off") {
+        x.innerHTML = "videocam";
+    } else {
+        x.innerHTML = "videocam_off";
+    }
+}
+//mic icon change
+function micBtn() {
+    var x = document.getElementsByClassName("micIcon");
+    for (var i = 0; i < x.length; i++) {
+        if (x[i].innerHTML === "mic_off") {
+            x[i].innerHTML = "mic";
+        } else {
+            x[i].innerHTML = "mic_off";
+        }
+    }
+}
+
+//copy
+function copyEvent(id) {
+    var str = document.getElementById(id);
+    window.getSelection().selectAllChildren(str);
+    document.execCommand("Copy")
+}
+
 link ='<title>Conference Room</title>\
 <!-- boostrap5 -->\
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"\
